@@ -7,3 +7,6 @@ public class TesteLivroDeNotas{
 
     }
 }
+
+//para executar java TesteLivroDeNotas
+//para criar as pastas azuis javac *.java
