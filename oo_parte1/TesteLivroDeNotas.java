@@ -1,0 +1,9 @@
+public class TesteLivroDeTeste{
+    public static void main(String args []) {
+        //x = 1
+        //print(x) 
+        LivroDeNotas livro1 = new LivroDeNotas();
+        livro1.exibirMensagem()
+        
+    }
+}
