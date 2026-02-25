@@ -1,9 +1,9 @@
-public class TesteLivroDeTeste{
+public class TesteLivroDeNotas{
     public static void main(String args []) {
         //x = 1
         //print(x) 
         LivroDeNotas livro1 = new LivroDeNotas();
-        livro1.exibirMensagem()
-        
+        livro1.exibirMensagem();
+
     }
 }
