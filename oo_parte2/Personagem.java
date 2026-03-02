@@ -16,8 +16,9 @@ public class Personagem {
         else{
             System.out.printf("%s sem energia para caçar\n",  nome);
         }
-    fome = fome + 1;
-    sono = sono +1;
+        if (fome < 10)
+            fome = fome + 1;
+            sono = Math.min(sono + 1, 10);
     }
 
 
