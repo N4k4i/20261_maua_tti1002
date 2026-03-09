@@ -62,13 +62,4 @@ public class Personagem {
     }
 }
 
-
-
-
-
-
-
-
-
-
 //somente classes publicas podem ter o metodo main
