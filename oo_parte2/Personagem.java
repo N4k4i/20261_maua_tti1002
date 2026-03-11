@@ -1,65 +1,84 @@
-public class Personagem {
-    String habilidade;
+public class Personagem{
     String nome;
-    int energia = 10;
-    int fome = 0;
-    int sono = 0;
-    //variaveis de estado 
-    //métodos tem 4 partes, tipos de retorno(void), nomes(cacar), lista de parametros() e corpo{}
-    
+    private int energia = 10;
+    private int fome = 0;
+    private int sono = 0;
+    //sobrecarga de construtores
+    Personagem(){
 
-    void cacar() {
+    }
+
+    Personagem(int energia, int fome, int sono){
+        setEnergia(energia);
+        setFome(fome);
+        setSono(sono);
+    }
+
+    public void setSono(int sono) {
+        if(sono >= 0 && sono <= 10)
+            this.sono = sono;
+    }
+
+    void setEnergia(int energia){
+        if(energia >= 0 && energia <= 10)
+            this.energia = energia;    
+    }
+
+    //setter
+    void setFome(int f){
+        if(f >= 0 && f <= 10)
+            fome = f;
+    }
+
+    //métodos
+    //tipo de retorno, nome, lista de parâmetros, corpo
+    void cacar(){
         // if energia >=2 :
-        if (energia >= 2) {
+        if(energia >= 2){
             System.out.println(nome + " caçando...");
             energia = energia - 2;
         }
         else{
-            System.out.printf("%s sem energia para caçar\n",  nome);
+            System.out.printf("%s sem energia para caçar\n", nome);
         }
         if (fome < 10)
             fome = fome + 1;
-            sono = Math.min(sono + 1, 10);
+        sono = Math.min(sono + 1, 10);
     }
 
-    void comer() {
-        if (fome >= 1) {
+    void comer(){
+        if(fome >= 1){
             //John comendo
             System.out.printf("%s comendo\n", nome);
-            //fome = fome - 1;
-            //fome -= 1;
+            // fome = fome - 1;
+            // fome -= 1;
             fome--;
             // --fome;
-            //operador ternario ou if/else de uma linha só
+            // operador ternário ou if/else de uma linha só
             energia = energia < 10 ? energia + 1 : energia;
         }
-        else {
+        else{
             System.out.printf("%s sem fome\n", nome);
         }
     }
-
-    void dormir() {
-        if (sono > 0) {
+    
+    void dormir(){
+        if(sono > 0){
             System.out.print(nome + " dormindo\n");
             sono -= 1;
-            switch (energia) {
+            switch(energia){
                 case 10:
-                    
                     break;
-            
                 default:
-                    energia = energia +1;
+                    energia = energia + 1;
             }
-
         }
-        else {
-            System.out.printf(nome + " sem sono\n");
+        else{
+            System.out.print(nome + " sem sono\n");
         }
     }
 
-    void exibirEstado() {
+    void exibirEstado(){
         System.out.printf("%s: e: %d, f: %d, s: %d\n", nome, energia, fome, sono);
     }
 }
-
-//somente classes publicas podem ter o metodo main
