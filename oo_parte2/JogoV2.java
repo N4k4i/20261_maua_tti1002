@@ -1,28 +1,13 @@
-09.03
-
 import java.util.Random;
 public class JogoV2 {
     public static void main(String[] args) throws Exception{
-
-        // Adicionar um segundo personagem
-        // Dar um nome para ele 
-        // Sortear separadamente oque ele tem que fazer
-        // Exibir o seu estado ao final tbm
-        // Desafio extra: fazer o personagem guloso, ou seja, ele tem maior probabilidade de comer 
-        // 60% de chance de comer, 30% de caçar e 10% de dormir
-
         Random gerador = new Random();
         Personagem cacador = new Personagem();
-        Personagem guloso = new Personagem();
+        cacador.nome = "John";
+        Personagem guloso = new Personagem(5, 8, 0);
         guloso.nome = "Guloso";
-        guloso.fome = 8;
-        guloso.energia = 6;
-        cacador.nome = "Gabriel";
-        //1: cacar
-        //2: comer
-        //3: dormir
         while(true){
-            int oQueFazer = gerador.nextInt(1,4);
+            int oQueFazer = gerador.nextInt(1, 4);
             switch(oQueFazer){
                 case 1:
                     cacador.cacar();
@@ -34,23 +19,22 @@ public class JogoV2 {
                     cacador.dormir();
                     break;
             }
-            int oQueFazer1 = gerador.nextInt(1,11);
-            switch(oQueFazer1){
+            oQueFazer = gerador.nextInt(1, 11);
+            switch(oQueFazer){
                 case 1, 2, 3, 4, 5, 6:
                     guloso.comer();
                     break;
-                case 7, 8, 9:
+                case 7, 8:
                     guloso.cacar();
                     break;
                 default:
                     guloso.dormir();
+                    break;
             }
-            System.out.println("=============================");
             cacador.exibirEstado();
-            System.out.println("=============================");
             guloso.exibirEstado();
-            System.out.println("=============================");
+            System.out.println("====================================");
             Thread.sleep(5000);
         }
-    }
+    }    
 }
