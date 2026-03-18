@@ -3,7 +3,7 @@ public class ContaBancaria {
     private String numero;
     private double saldo;
 
-    public ContaBancaria(String titular, String numero, double salo) {
+    public ContaBancaria(String titular, String numero, double saldo) {
         this.titular = titular;
         this.numero = numero;
         setSaldo(saldo);
@@ -12,7 +12,11 @@ public class ContaBancaria {
     public void setSaldo(double saldo) {
         if (saldo >= 0) 
             this.saldo = saldo;
-}
+    }
+
+    public void getTitular() {
+        return titular;
+    }
 
     public ContaBancaria(String titular, String numero, double saldoInicial) {
         this.titular = titular;
