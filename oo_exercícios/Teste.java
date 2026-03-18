@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.random.*;
 
 
@@ -30,9 +31,10 @@ public class Teste {
                     break;
                 case 3:
                     break;
-            
-
             }
+            conta1.exibirEstrato();
+            conta2.exibirEstrato();
+            Thread.sleep(00000);
         
         }
 }
