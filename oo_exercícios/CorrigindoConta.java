@@ -1,4 +1,4 @@
-public classs ContaBancaria {
+public class ContaBancaria {
     String nome;
     private String titular:
     private String numero;
@@ -24,7 +24,7 @@ public classs ContaBancaria {
         }
         else {
             saldo -= valor;
-            System.out.println("Saque de R$%.2f realizado com sucesso.\n", valor)
+            System.out.println("Saque de R$%.2f realizado com sucesso.\n", valor);
         }
     }
 
@@ -48,5 +48,14 @@ public classs ContaBancaria {
         System.out.println("Conta %s | Titular: %s | Saldo: %.2f \n", numero, titular, saldo);
     }
 
+    public void exibirExtrato() {
+        System.out.println("--- Extrato ---");
+        System.out.println("Titular: " + titular);
+        System.out.println("Conta: " + numero);
+        System.out.println("Valor: R$%.2f", saldo);
+        System.out.println("-----------");
+    }
+
+    switch()
 
 }

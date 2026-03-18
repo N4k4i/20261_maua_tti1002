@@ -3,6 +3,17 @@ public class ContaBancaria {
     private String numero;
     private double saldo;
 
+    public ContaBancaria(String titular, String numero, double salo) {
+        this.titular = titular;
+        this.numero = numero;
+        setSaldo(saldo);
+    }
+
+    public void setSaldo(double saldo) {
+        if (saldo >= 0) 
+            this.saldo = saldo;
+}
+
     public ContaBancaria(String titular, String numero, double saldoInicial) {
         this.titular = titular;
         this.numero = numero;
