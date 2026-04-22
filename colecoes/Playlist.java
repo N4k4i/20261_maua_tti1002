@@ -23,6 +23,10 @@ public class Playlist {
                     }
                     JOptionPane.showMessageDialog(null, textoFinal);
                     break;
+                case 3:
+                    //pegar o nome de uma musica
+                    //pegar uma nota pra ela
+                    //atribuir essa nota à música encontrada na coleçãonoffwoom
             }
         }while(op != 0);
     }
