@@ -1,42 +1,47 @@
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JButton;
+
+package br.maua.maua_sub2_conversor;
+
 import java.awt.Container;
 import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class Conversor {
     
-    public static void criarTela() {
+    public static void criarTela(){
         JFrame tela = new JFrame("Conversor");
         JTextField celsiusTextField = new JTextField(10);
-        JLabel celciusLabel = new JLabel("\u00B0");
+        JLabel celsiusLabel = new JLabel("\u00B0C");
         JButton convertButton = new JButton("OK");
         JLabel valorConvertidoLabel = new JLabel("");
-        Container paineldeConteudo = tela.getContentPane();
+        Container painelDeConteudo = tela.getContentPane();
         painelDeConteudo.setLayout(new GridLayout(2, 4, 2, 4));
         painelDeConteudo.add(celsiusTextField);
-        painelDeConteudo.add(converButton);
+        painelDeConteudo.add(celsiusLabel);
+        painelDeConteudo.add(convertButton);
         painelDeConteudo.add(valorConvertidoLabel);
         
         convertButton.addActionListener((e) -> {
             double celsius = Double.parseDouble(
-                    celciusTextField.getText())
+                celsiusTextField.getText()
             );
-            double fahrenheit = celcius / 5 * 9 + 32;
+            
+            double fahrenheit = celsius / 5 * 9 + 32;
             
             valorConvertidoLabel.setText(
-            String.format("&.2f\u00B0F", fahrenheit)
+                String.format("%.2f\u00B0F", fahrenheit)
             );
         });
         
+        
         tela.pack();
         tela.setLocationRelativeTo(null);
-        tela.setVisible(true);
-        
+        tela.setVisible(true); 
     }
-    
-    public static void main(String{} args) {
+
+    public static void main(String[] args) {
         criarTela();
     }
 }
