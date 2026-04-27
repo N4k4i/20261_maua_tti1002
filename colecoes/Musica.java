@@ -1,17 +1,21 @@
 public class Musica {
-    private String titulo;
-    private int avaliacao;
+  private String titulo;
+  private int avaliacao;
+  
+  public Musica(String titulo){
+    this.titulo = titulo;
+  }
 
-    public Musica(String titulo) {
-        this.titulo = titulo;
-    }
+  public String getTitulo(){
+    return titulo;
+  }
 
-    public String getTitulo() {
-        return titulo;
-    }
+  public void setAvaliacao(int avaliacao) {
+    this.avaliacao = avaliacao;
+  }
 
-    @Override  //pra que serve? não sei! É uma boa prática!
-    public String toString() {
-        return titulo;
-    }
+  @Override
+  public String toString() {
+    return titulo;
+  }
 }
